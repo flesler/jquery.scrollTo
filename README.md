@@ -2,7 +2,7 @@ jQuery.ScrollTo
 
 * Apart from the target and duration, the plugin can receive a hash of settings. Documentation and examples are included in the source file.
 
-* If you are interested in animated "same-page-scrolling" using anchors(<a href="#some_id">...), check http://github.com/flesler/jquery.localScroll
+* If you are interested in animated "same-page-scrolling" using anchors(href="#some_id"), check http://github.com/flesler/jquery.localScroll
 
 * For a slideshow-like behavior using scrolling, check http://github.com/flesler/jquery.serialScroll
 
