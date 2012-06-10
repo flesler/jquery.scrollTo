@@ -1,4 +1,4 @@
-jQuery.ScrollTo 1.4
+jQuery.ScrollTo
 
 * Apart from the target and duration, the plugin can receive a hash of settings. Documentation and examples are included in the source file.
 
