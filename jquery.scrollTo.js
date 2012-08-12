@@ -84,7 +84,7 @@
 
 			var doc = (elem.contentWindow || elem).document || elem.ownerDocument || elem;
 			
-			return /WebKit/.test(navigator.userAgent) || doc.compatMode == 'BackCompat' ?
+			return /webkit/.test(navigator.userAgent.toLowerCase()) || doc.compatMode == 'BackCompat' ?
 				doc.body : 
 				doc.documentElement;
 		});
