@@ -130,6 +130,7 @@
 					}
 					// Relative selector, no break!
 					targ = $(targ,this);
+					if (targ.length) return;
 				case 'object':
 					// DOMElement / jQuery
 					if( targ.is || targ.style )
