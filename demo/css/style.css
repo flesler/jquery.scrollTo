@@ -112,6 +112,7 @@ ul.elements{
 	}
 ul.links{
 	height:20px;
+	overflow:hidden;
 }
 	ul.links a{
 		color:#69C;

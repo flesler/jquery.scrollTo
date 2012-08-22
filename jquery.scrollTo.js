@@ -1,15 +1,13 @@
 /*!
  * jQuery.ScrollTo
- * Copyright (c) 2007-2009 Ariel Flesler - aflesler(at)gmail(dot)com | http://flesler.blogspot.com
+ * Copyright (c) 2007-2012 Ariel Flesler - aflesler(at)gmail(dot)com | http://flesler.blogspot.com
  * Dual licensed under MIT and GPL.
- * Date: 06/05/2009
+ * Date: 22/08/2012
  *
  * @projectDescription Easy element scrolling using jQuery.
  * http://flesler.blogspot.com/2007/10/jqueryscrollto.html
- * Works with jQuery +1.2.6. Tested on FF 2/3, IE 6/7/8, Opera 9.5/6, Safari 3, Chrome 1 on WinXP.
- *
  * @author Ariel Flesler
- * @version 1.4.2
+ * @version 1.4.3
  *
  * @id jQuery.scrollTo
  * @id jQuery.fn.scrollTo
@@ -84,7 +82,7 @@
 
 			var doc = (elem.contentWindow || elem).document || elem.ownerDocument || elem;
 			
-			return /webkit/.test(navigator.userAgent.toLowerCase()) || doc.compatMode == 'BackCompat' ?
+			return /webkit/i.test(navigator.userAgent) || doc.compatMode == 'BackCompat' ?
 				doc.body : 
 				doc.documentElement;
 		});
