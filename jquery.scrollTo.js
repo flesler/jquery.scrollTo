@@ -112,6 +112,9 @@
 		settings.over = both( settings.over );
 
 		return this._scrollable().each(function(){
+			// Null target yields nothing, just like jQuery does
+			if (!target) return;
+
 			var elem = this,
 				$elem = $(elem),
 				targ = target, toff, attr = {},

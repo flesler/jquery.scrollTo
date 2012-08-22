@@ -1,6 +1,7 @@
 1.4.3
 [Enhancement]
 - Limit calculations can be disabled by setting the option 'limit' to false.
+- Null target or unmatching selector don't break and fail silently
 [Misc]
 - Removed support for the deprecated setting 'speed'
 [Fix]
