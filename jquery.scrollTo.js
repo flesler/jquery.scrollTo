@@ -98,6 +98,8 @@
 			
 		if( target == 'max' )
 			target = 9e9;
+		else if(jQuery(target).length == 0)
+			return;
 			
 		settings = $.extend( {}, $scrollTo.defaults, settings );
 		// Speed is still recognized for backwards compatibility
