@@ -2,12 +2,12 @@
  * jQuery.ScrollTo
  * Copyright (c) 2007-2012 Ariel Flesler - aflesler(at)gmail(dot)com | http://flesler.blogspot.com
  * Dual licensed under MIT and GPL.
- * Date: 22/08/2012
+ * Date: 4/09/2012
  *
  * @projectDescription Easy element scrolling using jQuery.
  * http://flesler.blogspot.com/2007/10/jqueryscrollto.html
  * @author Ariel Flesler
- * @version 1.4.3
+ * @version 1.4.3.1
  *
  * @id jQuery.scrollTo
  * @id jQuery.fn.scrollTo
@@ -113,7 +113,7 @@
 
 		return this._scrollable().each(function(){
 			// Null target yields nothing, just like jQuery does
-			if (!target) return;
+			if (target == null) return;
 
 			var elem = this,
 				$elem = $(elem),

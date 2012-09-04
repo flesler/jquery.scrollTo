@@ -1,3 +1,7 @@
+1.4.3.1
+[Fix]
+Fixed $.scrollTo(0) broken on 1.4.3
+
 1.4.3
 [Enhancement]
 - Limit calculations can be disabled by setting the option 'limit' to false.
