@@ -1,4 +1,13 @@
-jQuery.ScrollTo
+# jQuery.ScrollTo
+
+### Installation and usage
+
+Using [bower](https://github.com/twitter/bower):
+```bash
+bower install jquery.scrollTo
+```
+
+### Notes
 
 * Apart from the target and duration, the plugin can receive a hash of settings. Documentation and examples are included in the source file.
 
