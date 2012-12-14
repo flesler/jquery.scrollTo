@@ -2,12 +2,12 @@
  * jQuery.ScrollTo
  * Copyright (c) 2007-2012 Ariel Flesler - aflesler(at)gmail(dot)com | http://flesler.blogspot.com
  * Dual licensed under MIT and GPL.
- * Date: 4/09/2012
+ * Date: 12/14/2012
  *
  * @projectDescription Easy element scrolling using jQuery.
  * http://flesler.blogspot.com/2007/10/jqueryscrollto.html
  * @author Ariel Flesler
- * @version 1.4.4
+ * @version 1.4.5 BETA
  *
  * @id jQuery.scrollTo
  * @id jQuery.fn.scrollTo
@@ -124,7 +124,7 @@
 				// A number will pass the regex
 				case 'number':
 				case 'string':
-					if( /^([+-]=)?\d+(\.\d+)?(px|%)?$/.test(targ) ){
+					if( /^([+-]=?)?\d+(\.\d+)?(px|%)?$/.test(targ) ){
 						targ = both( targ );
 						// We are done
 						break;
