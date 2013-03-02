@@ -31,6 +31,7 @@
  *	 @option {Boolean} queue If true, and both axis are given, the 2nd axis will only be animated after the first one ends.
  *	 @option {Function} onAfter Function to be called after the scrolling ends. 
  *	 @option {Function} onAfterFirst If queuing is activated, this function will be called after the first scrolling ends.
+ *   @option {Function} onProgress Function to be called during the progress event of the scroll
  * @return {jQuery} Returns the same jQuery object, for chaining.
  *
  * @desc Scroll to a fixed position
@@ -185,11 +186,23 @@
 
 			animate( settings.onAfter );			
 
-			function animate( callback ){
-				$elem.animate( attr, duration, settings.easing, callback && function(){
-					callback.call(this, target, settings);
-				});
-			};
+            function animate(callback) {
+
+                var opts = {
+                    duration: duration,
+                    easing: settings.easing
+                };
+
+                if (callback)
+                    opts.complete = function() {
+                        callback.call(this, target, settings);
+                    };
+
+                if (settings.onProgress)
+                    opts.progress = settings.onProgress;
+
+                $elem.animate(attr, opts);
+            };
 
 		}).end();
 	};
