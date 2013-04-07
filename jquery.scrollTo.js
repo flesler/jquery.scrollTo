@@ -1,13 +1,12 @@
 /*!
  * jQuery.ScrollTo
- * Copyright (c) 2007-2012 Ariel Flesler - aflesler(at)gmail(dot)com | http://flesler.blogspot.com
+ * Copyright (c) 2007-2013 Ariel Flesler - aflesler<a>gmail<d>com | http://flesler.blogspot.com
  * Dual licensed under MIT and GPL.
- * Date: 12/14/2012
  *
  * @projectDescription Easy element scrolling using jQuery.
  * http://flesler.blogspot.com/2007/10/jqueryscrollto.html
  * @author Ariel Flesler
- * @version 1.4.5 BETA
+ * @version 1.4.5b
  *
  * @id jQuery.scrollTo
  * @id jQuery.fn.scrollTo
