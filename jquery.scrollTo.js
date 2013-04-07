@@ -160,10 +160,14 @@
 						attr[key] += targ[axis=='x'?'width':'height']() * settings.over[pos];
 				}else{ 
 					var val = targ[pos];
-					// Handle percentage values
-					attr[key] = val.slice && val.slice(-1) == '%' ? 
+					if (!val) {
+						return;
+					} else {
+						// Handle percentage values
+						attr[key] = val.slice && val.slice(-1) == '%' ? 
 						parseFloat(val) / 100 * max
-						: val;
+						: val;	
+					}
 				}
 
 				// Number or 'number'
