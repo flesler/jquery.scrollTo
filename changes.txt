@@ -1,4 +1,4 @@
-1.4.5 BETA
+1.4.5
 [Fix]
 Fixed passing a negative scroll value crashes
 

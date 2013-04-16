@@ -1,6 +1,6 @@
 {
   "name": "jquery.scrollTo",
-  "version": "1.4.5b",
+  "version": "1.4.5",
   "description": "A small, customizable plugin for scrolling elements, or the window itself.",
   "homepage": "https://github.com/flesler/jquery.scrollTo",
   "main": [
