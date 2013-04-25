@@ -182,11 +182,20 @@
 				}
 			});
 
-			animate( settings.onAfter );			
+			animate( settings.step, settings.onAfter );			
 
-			function animate( callback ){
-				$elem.animate( attr, duration, settings.easing, callback && function(){
-					callback.call(this, target, settings);
+			function animate( step, callback )
+			{
+				$elem.animate( attr, 
+				{
+					duration: duration, 
+					easing: settings.easing, 
+					complete: function(){
+						callback.call(this, target, settings);
+					},
+					step: function(){
+						step.call(this);
+					}
 				});
 			};
 
