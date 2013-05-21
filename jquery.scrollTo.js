@@ -6,7 +6,7 @@
  * @projectDescription Easy element scrolling using jQuery.
  * http://flesler.blogspot.com/2007/10/jqueryscrollto.html
  * @author Ariel Flesler
- * @version 1.4.5
+ * @version 1.4.6
  *
  * @id jQuery.scrollTo
  * @id jQuery.fn.scrollTo
@@ -186,7 +186,7 @@
 
 			function animate( callback ){
 				$elem.animate( attr, duration, settings.easing, callback && function(){
-					callback.call(this, target, settings);
+					callback.call(this, targ, settings);
 				});
 			};
 

@@ -1,3 +1,7 @@
+1.4.6
+[Fix]
+Fixed first argument of onAfter and onAfterFirst was original target and should be "parsed" target
+
 1.4.5
 [Fix]
 Fixed passing a negative scroll value crashes
