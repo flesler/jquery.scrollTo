@@ -185,7 +185,8 @@
 			animate( settings.onAfter );			
 
 			function animate( callback ){
-				$elem.animate( attr, duration, settings.easing, callback && function(){
+				// Added stop() here to prevent the animations from building a queue
+				$elem.stop().animate( attr, duration, settings.easing, callback && function(){
 					callback.call(this, targ, settings);
 				});
 			};
