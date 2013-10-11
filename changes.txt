@@ -1,18 +1,24 @@
+1.4.7
+[Feature]
+- Added setting "", when true, the scrolling animation will end if the user scrolls manually
+[Misc]
+- Changed spacing
+
 1.4.6
 [Fix]
-Fixed first argument of onAfter and onAfterFirst was original target and should be "parsed" target
+- Fixed first argument of onAfter and onAfterFirst was original target and should be "parsed" target
 
 1.4.5
 [Fix]
-Fixed passing a negative scroll value crashes
+- Fixed passing a negative scroll value crashes
 
 1.4.4
 [Change]
-Re-released as 1.4.4 to avoid issues with bower
+- Re-released as 1.4.4 to avoid issues with bower
 
 1.4.3.1
 [Fix]
-Fixed $.scrollTo(0) broken on 1.4.3
+- Fixed $.scrollTo(0) broken on 1.4.3
 
 1.4.3
 [Enhancement]
