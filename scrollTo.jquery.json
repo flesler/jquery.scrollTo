@@ -19,7 +19,7 @@
 		"url": "https://github.com/flesler/jquery.scrollTo/blob/master/LICENSE"
 	}],
 	"homepage": "https://github.com/flesler/jquery.scrollTo",
-	"docs": "https://github.com/flesler/jquery.scrollTo",
+	"docs": "http://flesler.blogspot.com/2007/10/jqueryscrollto.html",
 	"bugs": "https://github.com/flesler/jquery.scrollTo/issues",
 	"download": "https://github.com/flesler/jquery.scrollTo/releases",
 	"demo": "http://demos.flesler.com/jquery/scrollTo",
