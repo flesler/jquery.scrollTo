@@ -7,6 +7,10 @@ Using [bower](https://github.com/twitter/bower):
 bower install jquery.scrollTo
 ```
 
+### Downloading Manually
+
+If you want the latest stable version, get the latest release from the [releases page](https://github.com/flesler/jquery.scrollTo/releases).
+
 ### Notes
 
 * Apart from the target and duration, the plugin can receive a hash of settings. Documentation and examples are included in the source file.
