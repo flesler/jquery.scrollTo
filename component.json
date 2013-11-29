@@ -4,7 +4,8 @@
   "description": "A small, customizable plugin for scrolling elements, or the window itself.",
   "homepage": "https://github.com/flesler/jquery.scrollTo",
   "main": [
-    "./jquery.scrollTo.js"
+    "./jquery.scrollTo.js",
+    "./jquery.scrollTo.min.js"
   ],
   "dependencies": {
     "jquery": ">=1.8"
