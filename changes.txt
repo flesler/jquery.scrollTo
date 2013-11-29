@@ -1,8 +1,8 @@
 1.4.7
-[Feature]
-- Added setting "", when true, the scrolling animation will end if the user scrolls manually
 [Misc]
 - Changed spacing
+- Changed licensing to MIT
+- Repo is compliant with official jquery plugins repository
 
 1.4.6
 [Fix]

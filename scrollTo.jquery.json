@@ -1,9 +1,9 @@
 {
 	"name": "scrollTo",
-	"title": "jQuery scrollTo",
+	"title": "Ariel Flesler's jQuery scrollTo",
 	"description": "Easy element scrolling using jQuery.",
 	"keywords": ["browser", "animated", "animation", "scrolling", "scroll", "links", "anchors"],
-	"version": "1.4.6",
+	"version": "1.4.7",
 	"author": {
 		"name": "Ariel Flesler",
 		"email": "aflesler@gmail.com",
@@ -16,7 +16,7 @@
 	}],
 	"licenses": [{
 		"type": "MIT",
-		"url": "https://github.com/flesler/jquery.scrollTo/blob/2.1.2/MIT-LICENSE.txt"
+		"url": "https://github.com/flesler/jquery.scrollTo/blob/master/LICENSE"
 	}],
 	"homepage": "https://github.com/flesler/jquery.scrollTo",
 	"docs": "https://github.com/flesler/jquery.scrollTo",
