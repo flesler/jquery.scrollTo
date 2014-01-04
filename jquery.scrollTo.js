@@ -8,8 +8,14 @@
  * @version 1.4.7
  */
 
-;(function( $ ) {
-	
+;(function (factory) {
+    if (typeof define === 'function' && define.amd) {
+        define(['jquery'], factory);
+    } else {
+        factory(jQuery);
+    }
+}(function ($) {
+
 	var $scrollTo = $.scrollTo = function( target, duration, settings ) {
 		return $(window).scrollTo( target, duration, settings );
 	};
@@ -171,4 +177,4 @@
 		return typeof val == 'object' ? val : { top:val, left:val };
 	};
 
-})( jQuery );
+}));
