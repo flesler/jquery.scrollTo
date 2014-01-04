@@ -178,4 +178,6 @@
 		return typeof val == 'object' ? val : { top:val, left:val };
 	};
 
+    // AMD requirement
+    return $scrollTo;
 }));
