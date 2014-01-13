@@ -101,6 +101,9 @@
 						// Get the real position of the target
 						toff = (targ = $(targ)).offset();
 			}
+			
+			var offset = $.isFunction(settings.offset) && settings.offset(elem, targ) || settings.offset;
+			
 			$.each( settings.axis.split(''), function( i, axis ) {
 				var Pos	= axis == 'x' ? 'Left' : 'Top',
 					pos = Pos.toLowerCase(),
@@ -117,7 +120,6 @@
 						attr[key] -= parseInt(targ.css('border'+Pos+'Width')) || 0;
 					}
 
-					var offset = $.isFunction(settings.offset) && settings.offset() || settings.offset;
 					attr[key] += offset[pos] || 0;
 
 					if(settings.over[pos])
