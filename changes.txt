@@ -1,5 +1,9 @@
+1.4.9
+[Enhancement]
+- "offset" setting can now be a function as well (#60)
+
 1.4.8
-[Improvement]
+[Enhancement]
 - Added support for AMD
 
 1.4.7

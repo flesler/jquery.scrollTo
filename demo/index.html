@@ -8,7 +8,7 @@
 	<meta name="robots" content="index,follow" />
 	<link type="text/css" rel="stylesheet" href="css/style.css" />
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-	<script type="text/javascript" src="../jquery.scrollTo.min.js"></script>
+	<script type="text/javascript" src="../jquery.scrollTo.js"></script>
 	<script type="text/javascript">
 		jQuery(function( $ ){
 			/**
@@ -115,6 +115,9 @@
 			$('#options-offset-hash').click(function(){
 				reset_o(); $paneOptions.scrollTo( 'li:eq(15)', 1000, { offset:{ top:-5,left:-30 } });
 			});
+			$('#options-offset-function').click(function(){
+				reset_o(); $paneOptions.scrollTo( 'li:eq(15)', 1000, {offset: function() { return {top:-30, left:-5}; }});
+			});
 			$('#options-over').click(function(){//same as { top:-50, left:-50 }
 				reset_o(); $paneOptions.scrollTo( 'li:eq(15)', 1000, { over:0.5 });
 			});
@@ -199,6 +202,7 @@
 			<li><a title="$(...).scrollTo( 'li:eq(15)', 1000, {margin:true} );//deduct the margin and border from the final position" id="options-margin" href="#">margin</a></li>
 			<li><a title="$(...).scrollTo( 'li:eq(15)', 1000, {offset:-50} );//add or deduct from the final position" id="options-offset" href="#">offset</a></li>
 			<li><a title="$(...).scrollTo( 'li:eq(15)', 1000, {offset: {top:-5, left:-30} });" id="options-offset-hash" href="#">offset(hash)</a></li>
+			<li><a title="$(...).scrollTo( 'li:eq(15)', 1000, {offset: function() { return {top:-30, left:-5}; }});" id="options-offset-function" href="#">offset(function)</a></li>
 			<li><a title="$(...).scrollTo( 'li:eq(15)', 1000, {over:0.5} );//add or deduct a fraction of its height/width" id="options-over" href="#">over</a></li>
 			<li><a title="$(...).scrollTo( 'li:eq(15)', 1000, {over:{top:0.2, left:-0.5} );" id="options-over-hash" href="#">over(hash)</a></li>
 			<li><a title="$(...).scrollTo( 'li:eq(15)', 1600, {queue:true} );//scroll one axis, then the other" id="options-queue" href="#">queue</a></li>
