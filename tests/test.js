@@ -6,7 +6,7 @@ $.fn.test = function(){
 	
 	$.scrollTo.defaults.axis = 'xy';
 	
-	this.scrollable().find('div').html(
+	this._scrollable().find('div').html(
 		navigator.userAgent +
 		'<br />' +
 		'document.compatMode is "' + document.compatMode + '"'
@@ -40,13 +40,13 @@ function f( name ){
 function testScrollable(){
 	
 	$.each([ window, document, f('body'), f('html') ], function(i, elem){
-		var s = $(elem).scrollable();
+		var s = $(elem)._scrollable();
 		assert( s.length == 1, 'scrollable must always return exactly 1 element' );
 		assert( s.is('html,body'), 'scrollable must either html or body for window scrolling' );
 	});
 		
 	$('body :not(iframe)').each(function(){
-		var s = $(this).scrollable();
+		var s = $(this)._scrollable();
 		assert( s.length == 1, 'scrollable must always return exactly 1 element' );
 		assert( s[0] == this, 'scrollable must return the same element for normal element scrolling' );
 	});
