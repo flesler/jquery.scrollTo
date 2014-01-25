@@ -9,7 +9,9 @@ $.fn.test = function(){
 	this._scrollable().find('div').html(
 		navigator.userAgent +
 		'<br />' +
-		'document.compatMode is "' + document.compatMode + '"'
+		'document.compatMode is "' + document.compatMode + '"' +
+		'<br />' +
+		'scrolling the ' + this._scrollable().prop('nodeName')
 	);
 
 		/*var orig = [ $(window).scrollLeft(), $(window).scrollTop() ];
