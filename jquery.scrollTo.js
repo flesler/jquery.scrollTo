@@ -8,14 +8,14 @@
  * @version 1.4.9
  */
 
-;(function (factory) {
+;(function(plugin) {
     // AMD Support
     if (typeof define === 'function' && define.amd) {
-        define(['jquery'], factory);
+        define('jquery.scrollTo', ['jquery'], plugin);
     } else {
-        factory(jQuery);
+        plugin(jQuery);
     }
-}(function ($) {
+}(function($) {
 
 	var $scrollTo = $.scrollTo = function( target, duration, settings ) {
 		return $(window).scrollTo( target, duration, settings );

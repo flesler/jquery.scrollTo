@@ -1,3 +1,7 @@
+1.4.10
+[Enhancement]
+- Giving the plugin an AMD module id so it can be required (f.e by localScroll)
+
 1.4.9
 [Enhancement]
 - "offset" setting can now be a function as well (#60)
