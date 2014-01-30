@@ -1,3 +1,7 @@
+1.4.11
+[Misc]
+- Reverted changes from 1.4.10
+
 1.4.10
 [Enhancement]
 - Giving the plugin an AMD module id so it can be required (f.e by localScroll)

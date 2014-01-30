@@ -5,13 +5,13 @@
  * http://flesler.blogspot.com/2007/10/jqueryscrollto.html
  * @projectDescription Easy element scrolling using jQuery.
  * @author Ariel Flesler
- * @version 1.4.9
+ * @version 1.4.11
  */
 
 ;(function(plugin) {
     // AMD Support
     if (typeof define === 'function' && define.amd) {
-        define('jquery.scrollTo', ['jquery'], plugin);
+        define(['jquery'], plugin);
     } else {
         plugin(jQuery);
     }
