@@ -9,12 +9,12 @@
  */
 
 ;(function(plugin) {
-    // AMD Support
-    if (typeof define === 'function' && define.amd) {
-        define(['jquery'], plugin);
-    } else {
-        plugin(jQuery);
-    }
+	// AMD Support
+	if (typeof define === 'function' && define.amd) {
+		define(['jquery'], plugin);
+	} else {
+		plugin(jQuery);
+	}
 }(function($) {
 
 	var $scrollTo = $.scrollTo = function( target, duration, settings ) {
@@ -22,9 +22,10 @@
 	};
 
 	$scrollTo.defaults = {
-		axis:'xy',
+		axis: 'xy',
 		duration: parseFloat($.fn.jquery) >= 1.3 ? 0 : 1,
-		limit:true
+		limit: true,
+		interrupt: false
 	};
 
 	// Returns the element that needs to be animated to scroll the window.
@@ -101,9 +102,9 @@
 						// Get the real position of the target
 						toff = (targ = $(targ)).offset();
 			}
-			
+
 			var offset = $.isFunction(settings.offset) && settings.offset(elem, targ) || settings.offset;
-			
+
 			$.each( settings.axis.split(''), function( i, axis ) {
 				var Pos	= axis == 'x' ? 'Left' : 'Top',
 					pos = Pos.toLowerCase(),
@@ -143,20 +144,31 @@
 					// Don't waste time animating, if there's no need.
 					if (old != attr[key])
 						// Intermediate animation
-						animate( settings.onAfterFirst );
+						animate( settings.onAfterFirst, settings.onStop );
 					// Don't animate this axis again in the next iteration.
 					delete attr[key];
 				}
 			});
 
-			animate( settings.onAfter );
+			animate( settings.onAfter, settings.onStop );
 
-			function animate( callback ) {
-				$elem.animate( attr, duration, settings.easing, callback && function() {
-					callback.call(this, targ, settings);
+			function animate( afterCallback, stopCallback ) {
+				$elem.animate( attr, {
+					duration: duration,
+					easing: settings.easing,
+					start: settings.interrupt && function () {
+						listenToUserScroll($elem);
+					},
+					fail: function() {
+						settings.interrupt && unlistenToUserScroll($elem);
+						stopCallback && stopCallback.call(this, targ, settings);
+					},
+					complete: function() {
+						settings.interrupt && unlistenToUserScroll($elem);
+						afterCallback && afterCallback.call(this, targ, settings);
+					}
 				});
-			};
-
+			}
 		}).end();
 	};
 
@@ -177,10 +189,22 @@
 			 - Math.min( html[size]  , body[size]   );
 	};
 
+	function listenToUserScroll($elem) {
+		$elem.on('scroll.scrollTo mousedown.scrollTo DOMMouseScroll.scrollTo mousewheel.scrollTo keyup.scrollTo', function (e) {
+			if (e.which > 0 || e.type === 'mousedown' || e.type === 'mousewheel') {
+				$elem.stop();  // This will cause the animation to "fail", see bellow
+			}
+		});
+	}
+
+	function unlistenToUserScroll($elem) {
+		$elem.off('.scrollTo');
+	}
+
 	function both( val ) {
 		return $.isFunction(val) || typeof val == 'object' ? val : { top:val, left:val };
-	};
+	}
 
-    // AMD requirement
-    return $scrollTo;
+	// AMD requirement
+	return $scrollTo;
 }));
