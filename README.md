@@ -7,6 +7,7 @@ Using [bower](https://github.com/twitter/bower):
 bower install jquery.scrollTo
 ```
 Using [composer](http://getcomposer.org/download/):
+
 Either run
 
 ```
