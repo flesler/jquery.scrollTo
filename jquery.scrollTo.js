@@ -1,4 +1,4 @@
-/*!
+/**
  * jQuery.ScrollTo
  * Copyright (c) 2007-2014 Ariel Flesler - aflesler<a>gmail<d>com | http://flesler.blogspot.com
  * Licensed under MIT
@@ -126,7 +126,7 @@
 						// Scroll to a fraction of its width/height
 						attr[key] += targ[axis=='x'?'width':'height']() * settings.over[pos];
 				} else {
-					var val = targ[pos];
+					var val = targ[pos] || '';
 					// Handle percentage values
 					attr[key] = val.slice && val.slice(-1) == '%' ?
 						parseFloat(val) / 100 * max
@@ -155,7 +155,7 @@
 				$elem.animate( attr, duration, settings.easing, callback && function() {
 					callback.call(this, targ, settings);
 				});
-			};
+			}
 
 		}).end();
 	};
@@ -179,7 +179,7 @@
 
 	function both( val ) {
 		return $.isFunction(val) || typeof val == 'object' ? val : { top:val, left:val };
-	};
+	}
 
     // AMD requirement
     return $scrollTo;
