@@ -6,6 +6,21 @@ Using [bower](https://github.com/twitter/bower):
 ```bash
 bower install jquery.scrollTo
 ```
+Using [composer](http://getcomposer.org/download/):
+
+Either run
+
+```
+php composer.phar require --prefer-dist flesler/jquery.scrollTo "*"
+```
+
+or add
+
+```
+"flesler/jquery.scrollTo": "*"
+```
+
+to the require section of your composer.json.
 
 ### Downloading Manually
 
