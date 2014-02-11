@@ -11,13 +11,13 @@ Using [composer](http://getcomposer.org/download/):
 Either run
 
 ```
-php composer.phar require --prefer-dist flesler/jquery.scrollTo "*"
+php composer.phar require --prefer-dist flesler/jquery.scrollto "*"
 ```
 
 or add
 
 ```
-"flesler/jquery.scrollTo": "*"
+"flesler/jquery.scrollto": "*"
 ```
 
 to the require section of your composer.json.
