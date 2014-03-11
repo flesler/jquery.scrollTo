@@ -50,7 +50,7 @@ If you want the latest stable version, get the latest release from the [releases
 
 * If 2 axis are scrolled, there's an option to queue the animations, so that the second will start once the first ended ('xy' and 'yx' will have different effects)
 
-* The option 'margin' can be setted to true, then the margin of the target element, will be taken into account and will be deducted.
+* The option 'margin' can be set to true, then the margin of the target element, will be taken into account and will be deducted.
 
 * 'margin' will only be valid, if the target is a selector, a DOM element, or a jQuery Object.
 
@@ -62,6 +62,6 @@ If you want the latest stable version, get the latest release from the [releases
 
 * If the first axis to be scrolled, is already positioned, that animation will be skipped, to avoid a delay in the animation.
 
-* The call to the plugin can be made in 2 different ways: $().scrollTo( target, duration, settings ) or $().scrollTo( target, settings ). Where one of the settings is 'duration'.
+* The call to the plugin can be made in 2 different ways: $(...).scrollTo( target, duration, settings ) or $(...).scrollTo( target, settings ). Where one of the settings is 'duration'.
 
 * If you find any bug, or you have any advice, don't hesitate to open an issue. 
