@@ -62,6 +62,6 @@ If you want the latest stable version, get the latest release from the [releases
 
 * If the first axis to be scrolled, is already positioned, that animation will be skipped, to avoid a delay in the animation.
 
-* The call to the plugin can be made in 2 different ways: $().scrollTo( target, duration, settings ) or $().scrollTo( target, settings ). Where one of the settings is 'duration'.
+* The call to the plugin can be made in 2 different ways: `$.scrollTo( target, duration, settings )` or `$.scrollTo( target, settings )`. Where one of the settings is 'duration'.
 
 * If you find any bug, or you have any advice, don't hesitate to open an issue. 
