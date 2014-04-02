@@ -5,7 +5,7 @@
  * http://flesler.blogspot.com/2007/10/jqueryscrollto.html
  * @projectDescription Easy element scrolling using jQuery.
  * @author Ariel Flesler
- * @version 1.4.11
+ * @version 1.4.12
  */
 
 ;(function(plugin) {
@@ -92,8 +92,8 @@
 						// We are done
 						break;
 					}
-					// Relative selector, no break!
-					targ = $(targ,this);
+					// Relative/Absolute selector, no break!
+					targ = win ? $(targ) : $(targ, this);
 					if (!targ.length) return;
 				case 'object':
 					// DOMElement / jQuery

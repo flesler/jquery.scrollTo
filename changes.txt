@@ -1,3 +1,7 @@
+1.4.12
+[Fix]
+- Fixed selector matching body fails on window scrolling
+
 1.4.11
 [Misc]
 - Reverted changes from 1.4.10
