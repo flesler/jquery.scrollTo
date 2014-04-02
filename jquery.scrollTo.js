@@ -11,7 +11,7 @@
 ;(function(plugin) {
     // AMD Support
     if (typeof define === 'function' && define.amd) {
-        define(['jquery'], plugin);
+        define('jquery.scrollTo', ['jquery'], plugin);
     } else {
         plugin(jQuery);
     }
