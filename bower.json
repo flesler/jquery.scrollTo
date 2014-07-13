@@ -4,8 +4,7 @@
   "description": "Easy element scrolling using jQuery.",
   "homepage": "https://github.com/flesler/jquery.scrollTo",
   "main": [
-    "./jquery.scrollTo.js",
-    "./jquery.scrollTo.min.js"
+    "./jquery.scrollTo.js"
   ],
   "ignore": [
     "**/.*",
