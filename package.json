@@ -3,9 +3,7 @@
   "version": "1.4.13",
   "description": "Easy element scrolling using jQuery.",
   "homepage": "https://github.com/flesler/jquery.scrollTo",
-  "main": [
-    "jquery.scrollTo.js"
-  ],
+  "main": "jquery.scrollTo.js",
   "ignore": [
     "**/.*",
     "demo",
