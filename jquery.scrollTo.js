@@ -181,6 +181,6 @@
     if (typeof module !== 'undefined' && module.exports) { //Node
         module.exports = factory(require('jquery'));
     } else {
-        window.jQuery.fn.colorbox = factory(window['jQuery']);
+        window.jQuery.fn.scrollTo = factory(window['jQuery']);
     }
 }));
