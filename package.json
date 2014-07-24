@@ -1,5 +1,5 @@
 {
-  "name": "jquery.scrollTo",
+  "name": "jquery-scroll-to",
   "version": "1.4.12",
   "description": "Easy element scrolling using jQuery.",
   "homepage": "https://github.com/flesler/jquery.scrollTo",
