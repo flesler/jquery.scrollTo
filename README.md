@@ -6,6 +6,10 @@ Using [bower](https://github.com/twitter/bower):
 ```bash
 bower install jquery.scrollTo
 ```
+Using npm:
+```bash
+npm install jquery.scrollto
+```
 Using [composer](http://getcomposer.org/download/):
 
 Either run

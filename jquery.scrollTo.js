@@ -1,17 +1,17 @@
 /*!
- * jQuery.ScrollTo
+ * jQuery.scrollTo
  * Copyright (c) 2007-2014 Ariel Flesler - aflesler<a>gmail<d>com | http://flesler.blogspot.com
  * Licensed under MIT
  * http://flesler.blogspot.com/2007/10/jqueryscrollto.html
  * @projectDescription Easy element scrolling using jQuery.
  * @author Ariel Flesler
- * @version 1.4.15
+ * @version 1.4.13
  */
-
 ;(function (define) {
 	'use strict';
 
 	define(['jquery'], function ($) {
+
 		var $scrollTo = $.scrollTo = function( target, duration, settings ) {
 			return $(window).scrollTo( target, duration, settings );
 		};
@@ -172,15 +172,16 @@
 
 		function both( val ) {
 			return $.isFunction(val) || typeof val == 'object' ? val : { top:val, left:val };
-		};
+		}
 
-	    // AMD requirement
-	    return $scrollTo;
-  })
+		// AMD requirement
+		return $scrollTo;
+	})
 }(typeof define === 'function' && define.amd ? define : function (deps, factory) {
-    if (typeof module !== 'undefined' && module.exports) { //Node
-        module.exports = factory(require('jquery'));
-    } else {
-        window.jQuery.fn.scrollTo = factory(window['jQuery']);
-    }
+	if (typeof module !== 'undefined' && module.exports) {
+		// Node
+		module.exports = factory(require('jquery'));
+	} else {
+		factory(jQuery);
+	}
 }));

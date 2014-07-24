@@ -1,3 +1,7 @@
+1.4.13
+[Misc]
+- Support for CommonJS / NPM added by durango
+
 1.4.12
 [Fix]
 - Fixed selector matching body fails on window scrolling
