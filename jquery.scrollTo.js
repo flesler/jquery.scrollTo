@@ -171,7 +171,7 @@
 		};
 
 		function both( val ) {
-			return $.isFunction(val) || typeof val == 'object' ? val : { top:val, left:val };
+			return ($.isFunction(val) || typeof val == 'object') && val !== null ? val : { top:val, left:val };
 		}
 
 		// AMD requirement
