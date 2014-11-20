@@ -1,3 +1,7 @@
+1.4.14
+[Misc]
+- Internal both() function will handle nulls correctly
+
 1.4.13
 [Misc]
 - Support for CommonJS / NPM added by durango
