@@ -123,7 +123,7 @@
 					} else {
 						var val = targ[pos];
 						// Handle percentage values
-						attr[key] = val.slice && val.slice(-1) == '%' ?
+						attr[key] = val && val.slice && val.slice(-1) == '%' ?
 							parseFloat(val) / 100 * max
 							: val;
 					}
