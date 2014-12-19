@@ -1,5 +1,7 @@
 # jQuery.ScrollTo
 
+[![](http://img.shields.io/badge/libscore-31656-brightgreen.svg?style=flat-square)](http://libscore.com/#$.fn.scrollTo)
+
 ### Installation and usage
 
 Using [bower](https://github.com/twitter/bower):
