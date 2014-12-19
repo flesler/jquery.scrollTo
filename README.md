@@ -1,28 +1,22 @@
 # jQuery.ScrollTo
 
-[![](http://img.shields.io/badge/libscore-31656-brightgreen.svg?style=flat-square)](http://libscore.com/#$.fn.scrollTo)
+[![GitHub version](https://badge.fury.io/gh/flesler%2Fjquery.scrollTo.svg)](http://badge.fury.io/gh/flesler%2Fjquery.scrollTo)
+[![libscore](http://img.shields.io/badge/libscore-31656-brightgreen.svg?style=flat-square)](http://libscore.com/#$.fn.scrollTo)
 
 ### Installation and usage
 
-Using [bower](https://github.com/twitter/bower):
+Using [![Bower version](https://badge.fury.io/bo/jquery.scrollTo.svg)](http://badge.fury.io/bo/jquery.scrollTo):
 ```bash
 bower install jquery.scrollTo
 ```
-Using [npm](https://www.npmjs.org/package/jquery.scrollto):
+Using [![npm version](https://badge.fury.io/js/jquery.scrollto.svg)](http://badge.fury.io/js/jquery.scrollto):
 ```bash
 npm install jquery.scrollto
 ```
-Using [composer](http://getcomposer.org/download/):
-
-Either run
-```
+Using [![PHP version](https://badge.fury.io/ph/flesler%2Fjquery.scrollTo.svg)](http://badge.fury.io/ph/flesler%2Fjquery.scrollTo):
+```php
 php composer.phar require --prefer-dist flesler/jquery.scrollto "*"
 ```
-or add
-```
-"flesler/jquery.scrollto": "*"
-```
-to the require section of your composer.json.
 
 ### Downloading Manually
 
