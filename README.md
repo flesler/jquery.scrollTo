@@ -1,7 +1,7 @@
 # jQuery.ScrollTo
 
 [![GitHub version](https://badge.fury.io/gh/flesler%2Fjquery.scrollTo.svg)](http://badge.fury.io/gh/flesler%2Fjquery.scrollTo)
-[![libscore](http://img.shields.io/badge/libscore-31656-brightgreen.svg?style=flat-square)](http://libscore.com/#$.fn.scrollTo)
+[![libscore](http://img.shields.io/badge/libscore-31656-brightgreen.svg?style=flat-square)](http://libscore.com/#jQuery.fn.scrollTo)
 
 ### Installation and usage
 
