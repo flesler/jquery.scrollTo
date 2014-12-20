@@ -115,8 +115,8 @@
 
 						// If it's a dom element, reduce the margin
 						if (settings.margin) {
-							attr[key] -= parseInt(targ.css('margin'+Pos)) || 0;
-							attr[key] -= parseInt(targ.css('border'+Pos+'Width')) || 0;
+							attr[key] -= parseInt(targ.css('margin'+Pos), 10) || 0;
+							attr[key] -= parseInt(targ.css('border'+Pos+'Width'), 10) || 0;
 						}
 
 						attr[key] += offset[pos] || 0;
