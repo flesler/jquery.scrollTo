@@ -40,7 +40,7 @@
 
 				var doc = (elem.contentWindow || elem).document || elem.ownerDocument || elem;
 
-				return /webkit/i.test(navigator.userAgent) || doc.compatMode == 'BackCompat' ?
+				return (/webkit/i.test(navigator.userAgent) && !/chrome/i.test(navigator.userAgent) || doc.compatMode == 'BackCompat' ?
 					doc.body :
 					doc.documentElement;
 			});
