@@ -18,6 +18,13 @@ Using [![PHP version](https://badge.fury.io/ph/flesler%2Fjquery.scrollTo.svg)](h
 php composer.phar require --prefer-dist flesler/jquery.scrollto "*"
 ```
 
+### Using spectrum with a CDN
+
+CDN provided by [cdnjs](https://cdnjs.com/libraries/jquery-scrollTo)
+```
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.14/jquery.scrollTo.min.js"></script>
+```
+
 ### Downloading Manually
 
 If you want the latest stable version, get the latest release from the [releases page](https://github.com/flesler/jquery.scrollTo/releases).
