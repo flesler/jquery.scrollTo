@@ -1,28 +1,35 @@
-# jQuery.ScrollTo
+# jQuery.scrollTo
 
 [![GitHub version](https://badge.fury.io/gh/flesler%2Fjquery.scrollTo.svg)](http://badge.fury.io/gh/flesler%2Fjquery.scrollTo)
 [![libscore](http://img.shields.io/badge/libscore-31656-brightgreen.svg?style=flat-square)](http://libscore.com/#jQuery.fn.scrollTo)
 
-### Installation and usage
+## Installation and usage
 
-Using [![Bower version](https://badge.fury.io/bo/jquery.scrollTo.svg)](http://badge.fury.io/bo/jquery.scrollTo):
+Via [![Bower version](https://badge.fury.io/bo/jquery.scrollTo.svg)](http://badge.fury.io/bo/jquery.scrollTo):
 ```bash
 bower install jquery.scrollTo
 ```
-Using [![npm version](https://badge.fury.io/js/jquery.scrollto.svg)](http://badge.fury.io/js/jquery.scrollto):
+Via [![npm version](https://badge.fury.io/js/jquery.scrollto.svg)](http://badge.fury.io/js/jquery.scrollto):
 ```bash
 npm install jquery.scrollto
 ```
-Using [![PHP version](https://badge.fury.io/ph/flesler%2Fjquery.scrollTo.svg)](http://badge.fury.io/ph/flesler%2Fjquery.scrollTo):
+Via [![PHP version](https://badge.fury.io/ph/flesler%2Fjquery.scrollTo.svg)](http://badge.fury.io/ph/flesler%2Fjquery.scrollTo):
 ```php
 php composer.phar require --prefer-dist flesler/jquery.scrollto "*"
+```
+
+### Using a public CDN
+
+CDN provided by [cdnjs](https://cdnjs.com/libraries/jquery-scrollTo)
+```html
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.14/jquery.scrollTo.min.js"></script>
 ```
 
 ### Downloading Manually
 
 If you want the latest stable version, get the latest release from the [releases page](https://github.com/flesler/jquery.scrollTo/releases).
 
-### Notes
+## Notes
 
 * Apart from the target and duration, the plugin can receive a hash of settings. Documentation and examples are included in the source file.
 

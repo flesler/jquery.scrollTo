@@ -9,7 +9,7 @@
   "homepage": "https://github.com/flesler/jquery.scrollTo/",
   "bugs": "https://github.com/flesler/jquery.scrollTo/issues",
   "repository": "git://github.com/flesler/jquery.scrollTo",
-  "keywords": ["browser","animated","animation","scrolling","scroll","links","anchors"],
+  "keywords": ["browser","animated","animation","scrolling","scroll","links","anchors","jquery","jquery-plugin"],
   "author": {
     "name": "Ariel Flesler",
     "web": "http://flesler.blogspot.com/"

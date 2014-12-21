@@ -19,7 +19,7 @@
     "jquery": ">=1.4"
   },
   "keywords": [
-    "browser", "animated", "animation", 
+    "browser", "animated", "animation", "jquery",
     "scrolling", "scroll", "links", "anchors"
   ],
   "author": {

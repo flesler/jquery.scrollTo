@@ -2,7 +2,7 @@
     "name": "flesler/jquery.scrollto",
     "description": "Easy element scrolling using jQuery.",
     "keywords": [
-        "browser", "animated", "animation",
+        "browser", "animated", "animation", "jquery",
         "scrolling", "scroll", "links", "anchors"
     ],
     "homepage": "https://github.com/flesler/jquery.scrollTo",
