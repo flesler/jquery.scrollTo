@@ -2,7 +2,8 @@
 [Compat]
 - Dropped support for $.scrollTo.window(), use $(window) or $(window)._scrollable()
 [Fix]
-- Using feature detection instead of browser sniffing to detect HTML vs BODY, only in Chrome
+- Using feature detection instead of browser sniffing to detect HTML vs BODY, only in Chrome/Mobile Safari
+- Fixed scrolling wasn't working on Safari/Chrome iPhone
 
 1.4.14
 [Misc]

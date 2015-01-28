@@ -164,7 +164,7 @@
 				var doc = (elem.contentWindow || elem).document || elem.ownerDocument || elem;
 				// Chrome is inconsistent with which one to use
 				// They change across versions #101
-				if (/chrome/i.test(navigator.userAgent)) {
+				if (/chrome|applewebkit/i.test(navigator.userAgent)) {
 					return scrolls(doc.body) || scrolls(doc.documentElement);
 				}
 				// Every other browser follows the same rule

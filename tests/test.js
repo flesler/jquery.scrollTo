@@ -1,6 +1,7 @@
 $.fn.test = function(){
-	if( location.search == '?notest' )
+	if (location.search == '?notest') {
 		return this;
+	}
 
 	testScrollable();
 	
@@ -25,7 +26,7 @@ $.fn.test = function(){
 		setTimeout(function(){
 			alert( elem.nodeName + ' ' + max );
 		}, 1000 );*/
-	return this.scrollTo('max', 1000).scrollTo(0, 1000)
+	return this.scrollTo('max', 1000).scrollTo(0, 1000);
 };
 
 function assert( bool, message ){
