@@ -1,11 +1,11 @@
 /*!
  * jQuery.scrollTo
- * Copyright (c) 2007-2014 Ariel Flesler - aflesler<a>gmail<d>com | http://flesler.blogspot.com
+ * Copyright (c) 2007-2015 Ariel Flesler - aflesler<a>gmail<d>com | http://flesler.blogspot.com
  * Licensed under MIT
  * http://flesler.blogspot.com/2007/10/jqueryscrollto.html
  * @projectDescription Easy element scrolling using jQuery.
  * @author Ariel Flesler
- * @version 1.4.14
+ * @version 1.5.0-beta
  */
 ;(function(define) {
 	'use strict';
@@ -19,31 +19,6 @@
 			axis:'xy',
 			duration: 0,
 			limit:true
-		};
-
-		// Returns the element that needs to be animated to scroll the window.
-		// Kept for backwards compatibility (specially for localScroll & serialScroll)
-		$scrollTo.window = function() {
-			return $(window)._scrollable();
-		};
-
-		// Hack, hack, hack :)
-		// Returns the real elements to scroll (supports window/iframes, documents and regular nodes)
-		$.fn._scrollable = function() {
-			return this.map(function() {
-				var elem = this,
-					isWin = !elem.nodeName || $.inArray(elem.nodeName.toLowerCase(), ['iframe','#document','html','body']) !== -1;
-
-				if (!isWin) {
-					return elem;
-				}
-
-				var doc = (elem.contentWindow || elem).document || elem.ownerDocument || elem;
-
-				return /webkit/i.test(navigator.userAgent) || doc.compatMode === 'BackCompat' ?
-					doc.body :
-					doc.documentElement;
-			});
 		};
 
 		$.fn.scrollTo = function(target, duration, settings) {
@@ -175,6 +150,25 @@
 				body = elem.ownerDocument.body;
 
 			return Math.max(html[scroll], body[scroll]) - Math.min(html[size], body[size]);
+		};
+
+		// Hack, hack, hack :)
+		// Returns the real elements to scroll (supports window/iframes, documents and regular nodes)
+		$.fn._scrollable = function() {
+			return this.map(function() {
+				var elem = this,
+					isWin = !elem.nodeName || $.inArray(elem.nodeName.toLowerCase(), ['iframe','#document','html','body']) !== -1;
+
+				if (!isWin) {
+					return elem;
+				}
+
+				var doc = (elem.contentWindow || elem).document || elem.ownerDocument || elem;
+
+				return /webkit/i.test(navigator.userAgent) || doc.compatMode === 'BackCompat' ?
+					doc.body :
+					doc.documentElement;
+			});
 		};
 
 		function both(val) {
