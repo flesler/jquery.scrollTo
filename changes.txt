@@ -1,6 +1,8 @@
 1.5.0-beta
 [Compat]
 - Dropped support for $.scrollTo.window(), use $(window) or $(window)._scrollable()
+[Fix]
+- Using feature detection instead of browser sniffing to detect HTML vs BODY, only in Chrome
 
 1.4.14
 [Misc]

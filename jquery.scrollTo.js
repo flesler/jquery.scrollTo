@@ -152,24 +152,36 @@
 			return Math.max(html[scroll], body[scroll]) - Math.min(html[size], body[size]);
 		};
 
-		// Hack, hack, hack :)
 		// Returns the real elements to scroll (supports window/iframes, documents and regular nodes)
+		// Used internally, available if needed (for example to animate the object or call .stop())
 		$.fn._scrollable = function() {
 			return this.map(function() {
 				var elem = this,
 					isWin = !elem.nodeName || $.inArray(elem.nodeName.toLowerCase(), ['iframe','#document','html','body']) !== -1;
 
-				if (!isWin) {
-					return elem;
-				}
+				if (!isWin) return elem;
 
 				var doc = (elem.contentWindow || elem).document || elem.ownerDocument || elem;
-
-				return /webkit/i.test(navigator.userAgent) || doc.compatMode === 'BackCompat' ?
-					doc.body :
-					doc.documentElement;
+				// Chrome is inconsistent with which one to use
+				// They change across versions #101
+				if (/chrome/i.test(navigator.userAgent)) {
+					return scrolls(doc.body) || scrolls(doc.documentElement);
+				}
+				// Every other browser follows the same rule
+				return doc.compatMode === 'BackCompat' ? doc.body : doc.documentElement;
 			});
 		};
+
+		function scrolls(elem) {
+			// If already scrolled means it works, no need to move the scroll
+			if (elem.scrollTop) return elem;
+			// Changed, then it works
+			if (++elem.scrollTop === 1) {
+				elem.scrollTop = 0;
+				return elem;
+			}
+			return null;
+		}
 
 		function both(val) {
 			return $.isFunction(val) || $.isPlainObject(val) ? val : { top:val, left:val };
