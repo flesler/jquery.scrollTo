@@ -5,7 +5,7 @@
  * http://flesler.blogspot.com/2007/10/jqueryscrollto.html
  * @projectDescription Easy element scrolling using jQuery.
  * @author Ariel Flesler
- * @version 1.5.0-beta
+ * @version 1.5.1-beta
  */
 ;(function(define) {
 	'use strict';
@@ -166,6 +166,10 @@
 				// They change across versions #101
 				if (/chrome|applewebkit/i.test(navigator.userAgent)) {
 					return scrolls(doc.body) || scrolls(doc.documentElement);
+				}
+				// Windows Phone always scrolls via <html> #56
+				if (/iemobile/i.test(navigator.userAgent)) {
+					return doc.documentElement;
 				}
 				// Every other browser follows the same rule
 				return doc.compatMode === 'BackCompat' ? doc.body : doc.documentElement;
