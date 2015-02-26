@@ -5,7 +5,7 @@
  * http://flesler.blogspot.com/2007/10/jqueryscrollto.html
  * @projectDescription Easy element scrolling using jQuery.
  * @author Ariel Flesler
- * @version 1.5.1-beta
+ * @version 1.5.2-beta
  */
 ;(function(define) {
 	'use strict';
@@ -179,8 +179,13 @@
 		function scrolls(elem) {
 			// If already scrolled means it works, no need to move the scroll
 			if (elem.scrollTop) return elem;
+			// We already tested and this one is the one
+			if ($.data(elem, '_scrolls')) return elem;
 			// Changed, then it works
-			if (++elem.scrollTop === 1) {
+			elem.scrollTop++;
+			if (elem.scrollTop === 1) {
+				// Mark it as correct so we don't re-scroll on every call to the plugin
+				$.data(elem, '_scrolls', true);
 				elem.scrollTop = 0;
 				return elem;
 			}

@@ -1,3 +1,9 @@
+1.5.2-beta
+[Fix]
+- Improved Chrome test, thanks pix666
+[Enhancement]
+- Only do feature detection once on Chrome to avoid re-scrolling the window all the time
+
 1.5.1-beta
 [Fix]
 - Added a special case for IE Mobile that only scrolls via documentElement
