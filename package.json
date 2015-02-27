@@ -10,6 +10,9 @@
   "bugs": "https://github.com/flesler/jquery.scrollTo/issues",
   "repository": "git://github.com/flesler/jquery.scrollTo",
   "keywords": ["browser","animated","animation","scrolling","scroll","links","anchors","jquery","jquery-plugin"],
+  "scripts": {
+    "pages": "git push origin master HEAD:gh-pages"
+  },
   "author": {
     "name": "Ariel Flesler",
     "web": "http://flesler.blogspot.com/"

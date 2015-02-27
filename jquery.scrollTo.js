@@ -162,14 +162,14 @@
 				if (!isWin) return elem;
 
 				var doc = (elem.contentWindow || elem).document || elem.ownerDocument || elem;
+				// Windows Phone always scrolls via <html> #56
+				if (/iemobile/i.test(navigator.userAgent)) {
+					return doc.documentElement;
+				}
 				// Chrome is inconsistent with which one to use
 				// They change across versions #101
 				if (/chrome|applewebkit/i.test(navigator.userAgent)) {
 					return scrolls(doc.body) || doc.documentElement;
-				}
-				// Windows Phone always scrolls via <html> #56
-				if (/iemobile/i.test(navigator.userAgent)) {
-					return doc.documentElement;
 				}
 				// Every other browser follows the same rule
 				return doc.compatMode === 'BackCompat' ? doc.body : doc.documentElement;
