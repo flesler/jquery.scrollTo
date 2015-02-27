@@ -165,7 +165,7 @@
 				// Chrome is inconsistent with which one to use
 				// They change across versions #101
 				if (/chrome|applewebkit/i.test(navigator.userAgent)) {
-					return scrolls(doc.body) || scrolls(doc.documentElement);
+					return scrolls(doc.body) || doc.documentElement;
 				}
 				// Windows Phone always scrolls via <html> #56
 				if (/iemobile/i.test(navigator.userAgent)) {
