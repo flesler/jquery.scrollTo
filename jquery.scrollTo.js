@@ -1,11 +1,11 @@
 /*!
  * jQuery.scrollTo
- * Copyright (c) 2007-2014 Ariel Flesler - aflesler<a>gmail<d>com | http://flesler.blogspot.com
+ * Copyright (c) 2007-2015 Ariel Flesler - aflesler<a>gmail<d>com | http://flesler.blogspot.com
  * Licensed under MIT
  * http://flesler.blogspot.com/2007/10/jqueryscrollto.html
  * @projectDescription Easy element scrolling using jQuery.
  * @author Ariel Flesler
- * @version 1.4.14
+ * @version 2.0.0
  */
 ;(function(define) {
 	'use strict';
@@ -21,30 +21,10 @@
 			limit:true
 		};
 
-		// Returns the element that needs to be animated to scroll the window.
-		// Kept for backwards compatibility (specially for localScroll & serialScroll)
-		$scrollTo.window = function() {
-			return $(window)._scrollable();
-		};
-
-		// Hack, hack, hack :)
-		// Returns the real elements to scroll (supports window/iframes, documents and regular nodes)
-		$.fn._scrollable = function() {
-			return this.map(function() {
-				var elem = this,
-					isWin = !elem.nodeName || $.inArray(elem.nodeName.toLowerCase(), ['iframe','#document','html','body']) !== -1;
-
-				if (!isWin) {
-					return elem;
-				}
-
-				var doc = (elem.contentWindow || elem).document || elem.ownerDocument || elem;
-
-				return /webkit/i.test(navigator.userAgent) || doc.compatMode === 'BackCompat' ?
-					doc.body :
-					doc.documentElement;
-			});
-		};
+		function isWin(elem) {
+			return !elem.nodeName ||
+				$.inArray(elem.nodeName.toLowerCase(), ['iframe','#document','html','body']) !== -1;
+		}		
 
 		$.fn.scrollTo = function(target, duration, settings) {
 			if (typeof duration === 'object') {
@@ -71,14 +51,16 @@
 			settings.offset = both(settings.offset);
 			settings.over = both(settings.over);
 
-			return this._scrollable().each(function() {
+			return this.each(function() {
 				// Null target yields nothing, just like jQuery does
 				if (target === null) return;
 
-				var elem = this,
+				var win = isWin(this),
+					elem = win ? this.contentWindow || window : this,
 					$elem = $(elem),
-					targ = target, toff, attr = {},
-					win = $elem.is('html,body');
+					targ = target, 
+					attr = {},
+					toff;
 
 				switch (typeof targ) {
 					// A number will pass the regex
@@ -89,8 +71,8 @@
 							// We are done
 							break;
 						}
-						// Relative/Absolute selector, no break!
-						targ = win ? $(targ) : $(targ, this);
+						// Relative/Absolute selector
+						targ = win ? $(targ) : $(targ, elem);
 						if (!targ.length) return;
 						/* falls through */
 					case 'object':
@@ -107,11 +89,11 @@
 					var Pos	= axis === 'x' ? 'Left' : 'Top',
 						pos = Pos.toLowerCase(),
 						key = 'scroll' + Pos,
-						old = elem[key],
+						prev = $(elem)[key](),
 						max = $scrollTo.max(elem, axis);
 
 					if (toff) {// jQuery / DOMElement
-						attr[key] = toff[pos] + (win ? 0 : old - $elem.offset()[pos]);
+						attr[key] = toff[pos] + (win ? 0 : prev - $elem.offset()[pos]);
 
 						// If it's a dom element, reduce the margin
 						if (settings.margin) {
@@ -142,23 +124,27 @@
 					// Queueing axes
 					if (!i && settings.queue) {
 						// Don't waste time animating, if there's no need.
-						if (old !== attr[key]) {
+						if (prev !== attr[key]) {
 							// Intermediate animation
 							animate(settings.onAfterFirst);
 						}
 						// Don't animate this axis again in the next iteration.
-						delete attr[key];
+						attr = {};
 					}
 				});
 
 				animate(settings.onAfter);
 
 				function animate(callback) {
-					$elem.animate(attr, duration, settings.easing, callback && function() {
-						callback.call(this, targ, settings);
+					var opts = $.extend({}, settings, {
+						duration: duration,
+						complete: callback && function() {
+							callback.call(elem, targ, settings);
+						}
 					});
+					$elem.animate(attr, opts);
 				}
-			}).end();
+			});
 		};
 
 		// Max scrolling position, works on quirks mode
@@ -167,12 +153,13 @@
 			var Dim = axis === 'x' ? 'Width' : 'Height',
 				scroll = 'scroll'+Dim;
 
-			if (!$(elem).is('html,body'))
+			if (!isWin(elem))
 				return elem[scroll] - $(elem)[Dim.toLowerCase()]();
 
 			var size = 'client' + Dim,
-				html = elem.ownerDocument.documentElement,
-				body = elem.ownerDocument.body;
+				doc = elem.ownerDocument || elem.document,
+				html = doc.documentElement,
+				body = doc.body;
 
 			return Math.max(html[scroll], body[scroll]) - Math.min(html[size], body[size]);
 		};
@@ -180,6 +167,20 @@
 		function both(val) {
 			return $.isFunction(val) || $.isPlainObject(val) ? val : { top:val, left:val };
 		}
+
+		// Add special hooks so that window scroll properties can be animated
+		$.Tween.propHooks.scrollLeft = 
+		$.Tween.propHooks.scrollTop = {
+			get: function(t) {
+				return $(t.elem)[t.prop]();
+			},
+			set: function(t) {
+				var v = Math.round(t.now);
+				if (this.get(t) !== v) {
+					$(t.elem)[t.prop](v);
+				}
+			}
+		};
 
 		// AMD requirement
 		return $scrollTo;

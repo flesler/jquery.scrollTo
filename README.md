@@ -29,6 +29,11 @@ CDN provided by [cdnjs](https://cdnjs.com/libraries/jquery-scrollTo)
 
 If you want the latest stable version, get the latest release from the [releases page](https://github.com/flesler/jquery.scrollTo/releases).
 
+## 2.0
+
+Version 2.0 has been recently released. It is mostly backwards compatible, if you have any issue first check [this link](https://github.com/flesler/jquery.scrollTo/wiki/Migrating-to-2.0).
+If your problem is not solved then go ahead and [report the issue](https://github.com/flesler/jquery.scrollTo/issues/new).
+
 ## Notes
 
 * Apart from the target and duration, the plugin can receive a hash of settings. Documentation and examples are included in the source file.

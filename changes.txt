@@ -1,3 +1,17 @@
+2.0.0
+[Feature]
+- All settings are passed to jQuery.animate() meaning it now supports even more settings
+[Enhancement]
+- $(window)._scrollable() is no longer needed, the element is always the window
+- Delegating to jQuery the get/set of element/window scroll positions.
+[Compat]
+- Dropped support for $.scrollTo.window() and $(window)._scrollable()
+[Fix]
+- Now works consistenly on Chrome 40
+- Now works correctly on Windows Phone
+- Now works correctly on Android Browsers
+- Now works correctly on iOS Browsers
+
 1.4.14
 [Misc]
 - Internal both() function will handle nulls correctly
