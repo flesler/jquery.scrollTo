@@ -1,7 +1,7 @@
 {
   "name": "jquery.scrollto",
   "version": "2.1.0",
-  "description": "Easy element scrolling using jQuery.",
+  "description": "Lightweight, cross-browser and highly customizable animated scrolling with jQuery",
   "main": "jquery.scrollTo.js",
   "license": "MIT",
   "ignore": ["**/.*","demo","tests","CHANGELOG","README.md","composer.json","bower.json"],

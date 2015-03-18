@@ -1,6 +1,6 @@
 {
     "name": "flesler/jquery.scrollto",
-    "description": "Easy element scrolling using jQuery.",
+    "description": "Lightweight, cross-browser and highly customizable animated scrolling with jQuery",
     "keywords": [
         "browser", "animated", "animation", "jquery",
         "scrolling", "scroll", "links", "anchors"
