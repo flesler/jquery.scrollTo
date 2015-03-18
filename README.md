@@ -84,6 +84,10 @@ You can add any setting supported by [$().animate()](http://api.jquery.com/anima
  * __progress()__: A callback triggered on every frame
  * And more, check jQuery's [documentation](http://api.jquery.com/animate/#animate-properties-options)
 
+### window shorthand
+
+You can use `$.scrollTo(...)` as a shorthand for `$(window).scrollTo(...)`.
+
 ### Changing the default settings
 
 As with most plugins, the default settings are exposed so they can be changed.
