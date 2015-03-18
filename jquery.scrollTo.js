@@ -5,7 +5,7 @@
  * http://flesler.blogspot.com/2007/10/jqueryscrollto.html
  * @projectDescription Easy element scrolling using jQuery.
  * @author Ariel Flesler
- * @version 2.0.1
+ * @version 2.1.0
  */
 ;(function(define) {
 	'use strict';
@@ -179,9 +179,17 @@
 				return $(t.elem)[t.prop]();
 			},
 			set: function(t) {
-				var v = Math.round(t.now);
-				if (this.get(t) !== v) {
-					$(t.elem)[t.prop](v);
+				var curr = this.get(t);
+				// If interrupt is true and user scrolled, stop animating
+				if (t.options.interrupt && t._last && t._last !== curr) {
+					return $(t.elem).stop();
+				}
+				var next = Math.round(t.now);
+				// Don't waste CPU
+				// Browsers don't render floating point scroll
+				if (curr !== next) {
+					$(t.elem)[t.prop](next);
+					t._last = this.get(t);
 				}
 			}
 		};

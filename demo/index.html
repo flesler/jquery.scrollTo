@@ -131,6 +131,9 @@
 			$('#settings-over-hash').click(function() {
 				$settings.scrollTo('li:eq(15)', 1000, { over:{ top:0.2, left:-0.5 } });
 			});
+			$('#settings-interrupt').click(function() {
+				$settings.scrollTo('li:eq(15)', 10000, { interrupt:true });
+			});
 			$('#settings-queue').click(function() {//in this case, having 'axis' as 'xy' or 'yx' matters.
 				$settings.scrollTo('li:eq(15)', 2000, { queue:true });
 			});
@@ -153,10 +156,19 @@
 				});
 			});
 			$('#settings-step').click(function() {
-				$settings.scrollTo('li:eq(15)', 2000, {step:function() {} });
+				$settings.scrollTo('li:eq(15)', 2000, {step:function(now) {
+					$('#settings-message').text(now.toFixed(2));
+				}});
 			});
 			$('#settings-progress').click(function() {
-				$settings.scrollTo('li:eq(15)', 2000, {progress:function() {} });
+				$settings.scrollTo('li:eq(15)', 2000, {progress:function(_, now) {
+					$('#settings-message').text(Math.round(now*100) + '%');
+				}});
+			});
+			$('#settings-fail').click(function() {
+				$settings.scrollTo('li:eq(15)', 10000, {interrupt:true, fail:function() {
+					$('#settings-message').text('Scroll interrupted!');
+				}});
 			});
 		});
 	</script>
@@ -216,7 +228,7 @@
 			<li><a title="$(...).scrollTo('li:eq(15)', 1000, {offset: function() { return {top:-30, left:-5}; }});" id="settings-offset-function" href="#">offset(function)</a></li>
 			<li><a title="$(...).scrollTo('li:eq(15)', 1000, {over:0.5});//add or deduct a fraction of its height/width" id="settings-over" href="#">over</a></li>
 			<li><a title="$(...).scrollTo('li:eq(15)', 1000, {over:{top:0.2, left:-0.5});" id="settings-over-hash" href="#">over(hash)</a></li>
-			<li><a title="$(...).scrollTo('li:eq(15)', 1600, {queue:true});//scroll one axis, then the other" id="settings-queue" href="#">queue</a></li>
+			<li><a title="Scroll manually to interrupt the animation" id="settings-interrupt" href="#">interrupt</a></li>
 			<li><a title="$(...).scrollTo('li:eq(15)', 1600, {onAfter:function() { } });//called after the scrolling ends" id="settings-onAfter" href="#">onAfter</a></li>
 			<li><a title="$(...).scrollTo('li:eq(15)', 1600, {queue:true, onAfterFirst:function() { } });//called after the first axis scrolled" id="settings-onAfterFirst" href="#">onAfterFirst</a></li>
 		</ul>
@@ -224,8 +236,10 @@
 		<ul class="links">
 			<li><a title="$(...).scrollTo('li:eq(15)', {duration:3000});//another way of calling the plugin" id="settings-duration" href="#">duration</a></li>
 			<li><a title="$(...).scrollTo('li:eq(15)', 2500, {easing:'elasout'});//specify an easing equation" id="settings-easing" href="#">easing</a></li>
+			<li><a title="$(...).scrollTo('li:eq(15)', 1600, {queue:true});//scroll one axis, then the other" id="settings-queue" href="#">queue</a></li>
 			<li><a title="$(...).scrollTo('li:eq(15)', 2500, {step:function() { }'});//specify a step function" id="settings-step" href="#">step</a></li>
 			<li><a title="$(...).scrollTo('li:eq(15)', 2500, {progress:function() { }'});//specify a progress function" id="settings-progress" href="#">progress</a></li>
+			<li><a title="Scroll manually to interrupt and trigger the callback" id="settings-fail" href="#">fail</a></li>
 			<li><a href="http://api.jquery.com/animate/#animate-properties-options" target="_blank">more</a></li>
 		</ul>
 		<div id="pane-settings" class="pane">
