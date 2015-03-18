@@ -22,7 +22,11 @@ php composer.phar require --prefer-dist flesler/jquery.scrollto "*"
 
 ### Using a public CDN
 
-CDN provided by [cdnjs](https://cdnjs.com/libraries/jquery-scrollTo)
+CDN provided by [jsdelivr](http://www.jsdelivr.com/#!jquery.scrollto)
+```html
+<script src="//cdn.jsdelivr.net/jquery.scrollto/2.1.0/jquery.scrollTo.min.js"></script>
+```
+CDN provided by [cdnjs](https://cdnjs.com/libraries/jquery-scrollTo) (outdated)
 ```html
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.14/jquery.scrollTo.min.js"></script>
 ```
