@@ -71,7 +71,7 @@
 							// We are done
 							break;
 						}
-						// Relative/Absolute selector, no break!
+						// Relative/Absolute selector
 						targ = win ? $(targ) : $(targ, elem);
 						if (!targ.length) return;
 						/* falls through */

@@ -10,6 +10,7 @@
 - Now works consistenly on Chrome 40
 - Now works correctly on Windows Phone
 - Now works correctly on Android Browsers
+- Now works correctly on iOS Browsers
 
 1.4.14
 [Misc]
