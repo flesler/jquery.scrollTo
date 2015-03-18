@@ -1,3 +1,7 @@
+2.0.1
+[Fix]
+- Fixed "queue" setting conflicts with $().animate(), forced to always get there as true
+
 2.0.0
 [Feature]
 - All settings are passed to jQuery.animate() meaning it now supports even more settings

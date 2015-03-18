@@ -5,7 +5,7 @@
  * http://flesler.blogspot.com/2007/10/jqueryscrollto.html
  * @projectDescription Easy element scrolling using jQuery.
  * @author Ariel Flesler
- * @version 2.0.0
+ * @version 2.0.1
  */
 ;(function(define) {
 	'use strict';
@@ -42,9 +42,8 @@
 			// Speed is still recognized for backwards compatibility
 			duration = duration || settings.duration;
 			// Make sure the settings are given right
-			settings.queue = settings.queue && settings.axis.length > 1;
-
-			if (settings.queue) {
+			var queue = settings.queue && settings.axis.length > 1;
+			if (queue) {
 				// Let's keep the overall duration
 				duration /= 2;
 			}
@@ -122,7 +121,7 @@
 					}
 
 					// Queueing axes
-					if (!i && settings.queue) {
+					if (!i && queue) {
 						// Don't waste time animating, if there's no need.
 						if (prev !== attr[key]) {
 							// Intermediate animation
@@ -137,6 +136,9 @@
 
 				function animate(callback) {
 					var opts = $.extend({}, settings, {
+						// The queue setting conflicts with animate()
+						// Force it to always be true
+						queue: true,
 						duration: duration,
 						complete: callback && function() {
 							callback.call(elem, targ, settings);
