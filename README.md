@@ -62,7 +62,7 @@ This defines the position to where `element` must be scrolled. The plugin suppor
 ### _settings_
 
 The `duration` parameter is a shortcut to the setting with the same name.
-These are the list of supported settings:
+These are the supported settings:
  * __axis__: The axes to animate: `xy` (default), `x`, `y`, `yx`
  * __interrupt__: If `true` will cancel the animation if the user scrolls. Default is `false`
  * __limit__: If `true` the plugin will not scroll beyond the container's size. Default is `true`
@@ -81,6 +81,16 @@ You can add any setting supported by [$().animate()](http://api.jquery.com/anima
  * __step()__: A callback triggered for every animated property on every frame
  * __progress()__: A callback triggered on every frame
  * And more, check jQuery's [documentation](http://api.jquery.com/animate/#animate-properties-options)
+
+### Changing the default settings
+
+As with most plugins, the default settings are exposed so they can be changed.
+```js
+$.extend($.scrollTo.defaults, {
+  axis: 'y',
+  duration: 800
+});
+```
 
 ### Stopping the animation
 
