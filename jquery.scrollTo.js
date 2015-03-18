@@ -88,7 +88,7 @@
 					var Pos	= axis === 'x' ? 'Left' : 'Top',
 						pos = Pos.toLowerCase(),
 						key = 'scroll' + Pos,
-						prev = $(elem)[key](),
+						prev = $elem[key](),
 						max = $scrollTo.max(elem, axis);
 
 					if (toff) {// jQuery / DOMElement
@@ -120,15 +120,17 @@
 						attr[key] = attr[key] <= 0 ? 0 : Math.min(attr[key], max);
 					}
 
-					// Queueing axes
-					if (!i && queue) {
-						// Don't waste time animating, if there's no need.
-						if (prev !== attr[key]) {
+					// Don't waste time animating, if there's no need.
+					if (!i && settings.axis.length > 1) {
+						if (prev === attr[key]) {
+							// No animation needed
+							attr = {};
+						} else if (queue) {
 							// Intermediate animation
 							animate(settings.onAfterFirst);
+							// Don't animate this axis again in the next iteration.
+							attr = {};
 						}
-						// Don't animate this axis again in the next iteration.
-						attr = {};
 					}
 				});
 
