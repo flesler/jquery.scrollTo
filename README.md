@@ -5,15 +5,15 @@
 
 ## Installation and usage
 
-Via [![Bower version](https://badge.fury.io/bo/jquery.scrollTo.svg)](http://badge.fury.io/bo/jquery.scrollTo):
+Via [bower](https://github.com/flesler/jquery.scrollTo/blob/master/bower.json):
 ```bash
 bower install jquery.scrollTo
 ```
-Via [![npm version](https://badge.fury.io/js/jquery.scrollto.svg)](http://badge.fury.io/js/jquery.scrollto):
+Via [npm](https://www.npmjs.com/package/jquery.scrollto):
 ```bash
 npm install jquery.scrollto
 ```
-Via [![PHP version](https://badge.fury.io/ph/flesler%2Fjquery.scrollTo.svg)](http://badge.fury.io/ph/flesler%2Fjquery.scrollTo):
+Via [packagist](https://packagist.org/packages/flesler/jquery.scrollTo):
 ```php
 php composer.phar require --prefer-dist flesler/jquery.scrollto "*"
 ```
