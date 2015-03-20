@@ -118,6 +118,7 @@ There are two plugins, also created by me that depend on jQuery.scrollTo and aim
 ### [jQuery.localScroll](https://github.com/flesler/jquery.localScroll)
 
 This plugin makes it very easy to implement anchor navigation.
+If you don't want to include another plugin, you can try using something like [this minimalistic gist](https://gist.github.com/flesler/3f3e1166690108abf747).
 
 ### [jQuery.serialScroll](https://github.com/flesler/jquery.serialScroll)
 
