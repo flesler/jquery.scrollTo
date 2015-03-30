@@ -1,3 +1,7 @@
+2.1.1
+[Fix]
+- Slight change so define function is not minified (#91)
+
 2.1.0
 [Enhancement]
 - Avoid animating a needless axis
