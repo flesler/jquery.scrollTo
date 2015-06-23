@@ -6,6 +6,7 @@ Lightweight, cross-browser and highly customizable animated scrolling with jQuer
 [![libscore](http://img.shields.io/badge/libscore-31656-brightgreen.svg?style=flat-square)](http://libscore.com/#jQuery.fn.scrollTo)
 
 ## Installation
+The plugin requires jQuery 1.8 or higher.
 
 Via [bower](https://github.com/flesler/jquery.scrollTo/blob/master/bower.json):
 ```bash
