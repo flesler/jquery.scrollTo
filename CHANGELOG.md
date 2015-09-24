@@ -48,7 +48,7 @@
 
 ## 1.4.11
 ###Misc
-##- Reverted changes from 1.4.10
+- Reverted changes from 1.4.10
 
 ## 1.4.10
 ### Enhancement
@@ -78,11 +78,11 @@
 
 ## 1.4.4
 ###Change
-##- Re-released as 1.4.4 to avoid issues with bower
+- Re-released as 1.4.4 to avoid issues with bower
 
 ## 1.4.3.1
 ### Fix
-##- Fixed $.scrollTo(0) broken on 1.4.3
+- Fixed $.scrollTo(0) broken on 1.4.3
 
 ## 1.4.3
 ### Enhancement
@@ -91,7 +91,7 @@
 ###Misc
 - Removed support for the deprecated setting 'speed'
 ### Fix
-##- Removed $.browser.webkit so the plugin works with jQuery +1.8
+- Removed $.browser.webkit so the plugin works with jQuery +1.8
 
 ## 1.4.2
 ### Feature
@@ -106,7 +106,7 @@
 ### Feature
 - The target can be 'max' to scroll to the end while keeping it elegant.
 ### Enhancement
-##- Default duration is 0 for jquery +1.3. Means sync animation
+- Default duration is 0 for jquery +1.3. Means sync animation
 - The plugin works on all major browsers, on compat & quirks modes, including iframes.
 - In addition to window/document, if html or body are received, the plugin will choose the right one.
 ### Fix
