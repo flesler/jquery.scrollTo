@@ -109,6 +109,19 @@ $.extend($.scrollTo.defaults, {
 jQuery.scrollTo ends up creating ordinary animations which can be stopped by calling [$().stop()](http://api.jquery.com/stop/) or [$().finish()](http://api.jquery.com/finish/) on the same element you called `$().scrollTo()`, including the `window`.
 Remember you can pass a `fail()` callback to be called when the animation is stopped.
 
+### onAfter and requestAnimationFrame
+
+jQuery.scrollTo has a `onAfter` callback for work that runs after the animation finishes. It will be called before the `scroll` event fires. To combat this you can use  [requestAnimationFrame](http://caniuse.com/#feat=requestanimationframe) to do work on the next tick. It is available in many browsers, but you may want to [polyfill](https://github.com/chrisdickinson/raf) for the few it does not support.
+```js
+$.scrollTo(100, {
+  onAfter: function() {
+    requestAnimationFrame(function() {
+        $(".result").addClass("selected");
+    })
+  }
+});
+```
+
 ## Demo
 
 Check the [demo](http://demos.flesler.com/jquery/scrollTo/) to see every option in action.
