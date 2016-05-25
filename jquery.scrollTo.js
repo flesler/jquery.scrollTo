@@ -22,6 +22,8 @@
 })(function($) {
 	'use strict';
 
+    var $html = $('html');
+
 	var $scrollTo = $.scrollTo = function(target, duration, settings) {
 		return $(window).scrollTo(target, duration, settings);
 	};
@@ -35,7 +37,7 @@
 	function isWin(elem) {
 		return !elem.nodeName ||
 			$.inArray(elem.nodeName.toLowerCase(), ['iframe','#document','html','body']) !== -1;
-	}		
+	}
 
 	$.fn.scrollTo = function(target, duration, settings) {
 		if (typeof duration === 'object') {
@@ -68,7 +70,7 @@
 			var win = isWin(this),
 				elem = win ? this.contentWindow || window : this,
 				$elem = $(elem),
-				targ = target, 
+				targ = target,
 				attr = {},
 				toff;
 
@@ -145,20 +147,42 @@
 				}
 			});
 
-			animate(settings.onAfter);
+            var $html = $('html');
 
-			function animate(callback) {
-				var opts = $.extend({}, settings, {
-					// The queue setting conflicts with animate()
-					// Force it to always be true
-					queue: true,
-					duration: duration,
-					complete: callback && function() {
-						callback.call(elem, targ, settings);
-					}
-				});
-				$elem.animate(attr, opts);
-			}
+            // Handle interrupt feature
+            if (settings.interrupt) {
+                // By adding a small delay, we can ensure touch event has happened after scroll was initiated (interrupted)
+                setTimeout(function() {
+                    // Set up one-time set of namespaced listeners for user scroll, click, tap or type.
+                    $html.one('scroll.scrl2 DOMMouseScroll.scrl2 mousedown.scrl2 mousewheel.scrl2 touchstart.scrl2', function(e){
+                        return $elem.stop();
+                    });
+                }, 250);
+            }
+
+            animate(settings.onAfter);
+
+            function animate(callback) {
+
+                var opts = $.extend({}, settings, {
+                    // The queue setting conflicts with animate()
+                    // Force it to always be true
+                    queue: true,
+                    duration: duration,
+                    complete: function() {
+
+                        // If interrupt set and you hit end of scroll with no interruptions, remove namespaced html listeners
+                        if (settings.interrupt) {
+                            return $html.off('scroll.scrl2 DOMMouseScroll.scrl2 mousedown.scrl2 mousewheel.scrl2 touchstart.scrl2');
+                        }
+
+                        if (callback) {
+                            callback.call(elem, targ, settings);
+                        }
+                    }
+                });
+                $elem.animate(attr, opts);
+            }
 		});
 	};
 
@@ -184,25 +208,22 @@
 	}
 
 	// Add special hooks so that window scroll properties can be animated
-	$.Tween.propHooks.scrollLeft = 
+	$.Tween.propHooks.scrollLeft =
 	$.Tween.propHooks.scrollTop = {
 		get: function(t) {
 			return $(t.elem)[t.prop]();
 		},
-		set: function(t) {
-			var curr = this.get(t);
-			// If interrupt is true and user scrolled, stop animating
-			if (t.options.interrupt && t._last && t._last !== curr) {
-				return $(t.elem).stop();
-			}
-			var next = Math.round(t.now);
-			// Don't waste CPU
-			// Browsers don't render floating point scroll
-			if (curr !== next) {
-				$(t.elem)[t.prop](next);
-				t._last = this.get(t);
-			}
-		}
+        set: function(t) {
+            var curr = this.get(t),
+                next = Math.round(t.now);
+
+            // Don't waste CPU
+            // Browsers don't render floating point scroll
+            if (curr !== next) {
+                $(t.elem)[t.prop](next);
+                t._last = curr;
+            }
+        }
 	};
 
 	// AMD requirement
