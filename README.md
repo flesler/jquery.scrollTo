@@ -30,7 +30,7 @@ CDN provided by [jsdelivr](http://www.jsdelivr.com/#!jquery.scrollto)
 ```
 CDN provided by [cdnjs](https://cdnjs.com/libraries/jquery-scrollTo)
 ```html
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.0/jquery.scrollTo.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
 ```
 
 ### Downloading Manually
