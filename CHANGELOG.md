@@ -122,7 +122,7 @@
 
 ### Fix
 - The plugin accepts floating numbers, Thanks Ramin
-- Using jQuery.nodeName where neccessary so that this works on xml+xhtml
+- Using jQuery.nodeName where necessary so that this works on xml+xhtml
 - The max() internal function wasn't completely accurrate, now it is 98% (except for IE on quirks mode and it's not too noticeable).
 
 ## 1.4
