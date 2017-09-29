@@ -143,7 +143,7 @@ This plugin simplifies the creation of scrolling slideshows.
 
 (The MIT License)
 
-Copyright (c) 2007-2016 Ariel Flesler <aflesler@gmail.com>
+Copyright (c) 2007 Ariel Flesler <aflesler@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
