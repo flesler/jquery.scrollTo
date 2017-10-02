@@ -34,7 +34,7 @@
 - Dropped support for $.scrollTo.window() and $(window)._scrollable()
 
 ### Fix
-- Now works consistenly on Chrome 40
+- Now works consistently on Chrome 40
 - Now works correctly on Windows Phone
 - Now works correctly on Android Browsers
 - Now works correctly on iOS Browsers
@@ -122,8 +122,8 @@
 
 ### Fix
 - The plugin accepts floating numbers, Thanks Ramin
-- Using jQuery.nodeName where neccessary so that this works on xml+xhtml
-- The max() internal function wasn't completely accurrate, now it is 98% (except for IE on quirks mode and it's not too noticeable).
+- Using jQuery.nodeName where necessary so that this works on xml+xhtml
+- The max() internal function wasn't completely accurate, now it is 98% (except for IE on quirks mode and it's not too noticeable).
 
 ## 1.4
 ### Fix
