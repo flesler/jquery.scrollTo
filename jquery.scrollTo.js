@@ -33,8 +33,14 @@
 	};
 
 	function isWin(elem) {
+		var nodeName = elem.nodeName.toLowerCase();
+		if (nodeName === 'body') {
+			// the body itself could be scrollable, or it could be the window
+			// so return true if the
+			return elem.clientHeight >= elem.scrollHeight && elem.clientWidth >= elem.scrollWidth;
+		}
 		return !elem.nodeName ||
-			$.inArray(elem.nodeName.toLowerCase(), ['iframe','#document','html','body']) !== -1;
+			$.inArray(nodeName, ['iframe','#document','html']) !== -1;
 	}
 
 	$.fn.scrollTo = function(target, duration, settings) {
