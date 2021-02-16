@@ -93,7 +93,7 @@
 					}
 			}
 
-			var offset = $.isFunction(settings.offset) && settings.offset(elem, targ) || settings.offset;
+			var offset = (typeof(settings.offset)==="function") && settings.offset(elem, targ) || settings.offset;
 
 			$.each(settings.axis.split(''), function(i, axis) {
 				var Pos	= axis === 'x' ? 'Left' : 'Top',
@@ -180,7 +180,7 @@
 	};
 
 	function both(val) {
-		return $.isFunction(val) || $.isPlainObject(val) ? val : { top:val, left:val };
+		return (typeof(val)==="function") || $.isPlainObject(val) ? val : { top:val, left:val };
 	}
 
 	// Add special hooks so that window scroll properties can be animated
