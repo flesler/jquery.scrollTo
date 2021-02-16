@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.3
+### Fix
+- Stop using jQuery.isFunction since it's deprecated (fixes #182)
+
 ## 2.1.2
 ### Fix
 - Plugin won't break if an empty jQuery object is passed, it's now consistent with selector target #121
