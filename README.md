@@ -138,6 +138,12 @@ If you don't want to include another plugin, you can try using something like [t
 
 This plugin simplifies the creation of scrolling slideshows.
 
+## Troubleshooting
+
+- `Cannot read property 'propHooks' of undefined`: You are most likely using the slim version jQuery, which doesn't include the effects module. The plugin cannot function without it and you'll need the full version.
+
+- **The element doesn't scroll**: A good approach to debug is to set `overflow: auto` temporarily to the scrollable element, to make sure it would be manually scrollable. If you don't see any scrollbar, the problem is likely in the HTML/CSS.
+
 ## License
 
 (The MIT License)
